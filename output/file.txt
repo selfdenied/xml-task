@@ -1,0 +1,96 @@
+The total price of the taxi fleet: 163000 USD
+
+The list of taxi sorted according to fuel consumption:
+
+Car ID: c3332
+Car price: 70000 USD
+Car top speed: 200 km/hour
+Car curb weight: 2200 kg.
+Car consumption: 1.5 l/100km
+Car bodystyle: SALOON
+Car drive: AWD
+Car gearbox: AUTOMATIC
+
+Car ID: c7711
+Car price: 34000 USD
+Car top speed: 216 km/hour
+Car curb weight: 1390 kg.
+Car consumption: 3.5 l/100km
+Car bodystyle: HATCHBACK
+Car drive: FWD
+Car gearbox: AUTOMATIC
+
+Car ID: c2490
+Car price: 9000 USD
+Car top speed: 190 km/hour
+Car curb weight: 1200 kg.
+Car consumption: 4.5 l/100km
+Car bodystyle: SALOON
+Car drive: FWD
+Car gearbox: MANUAL
+
+Car ID: c1110
+Car price: 10000 USD
+Car top speed: 210 km/hour
+Car curb weight: 1560 kg.
+Car consumption: 7.1 l/100km
+Car bodystyle: SALOON
+Car drive: FWD
+Car gearbox: MANUAL
+
+Car ID: c2329
+Car price: 25000 USD
+Car top speed: 250 km/hour
+Car curb weight: 1700 kg.
+Car consumption: 9.5 l/100km
+Car bodystyle: COUPE
+Car drive: AWD
+Car gearbox: AUTOMATIC
+
+Car ID: c1700
+Car price: 15000 USD
+Car top speed: 250 km/hour
+Car curb weight: 1870 kg.
+Car consumption: 13.7 l/100km
+Car bodystyle: ESTATE
+Car drive: RWD
+Car gearbox: AUTOMATIC
+
+The list of taxi with the given top speed range (180 - 220 km/hour):
+
+Car ID: c1110
+Car price: 10000 USD
+Car top speed: 210 km/hour
+Car curb weight: 1560 kg.
+Car consumption: 7.1 l/100km
+Car bodystyle: SALOON
+Car drive: FWD
+Car gearbox: MANUAL
+
+Car ID: c2490
+Car price: 9000 USD
+Car top speed: 190 km/hour
+Car curb weight: 1200 kg.
+Car consumption: 4.5 l/100km
+Car bodystyle: SALOON
+Car drive: FWD
+Car gearbox: MANUAL
+
+Car ID: c3332
+Car price: 70000 USD
+Car top speed: 200 km/hour
+Car curb weight: 2200 kg.
+Car consumption: 1.5 l/100km
+Car bodystyle: SALOON
+Car drive: AWD
+Car gearbox: AUTOMATIC
+
+Car ID: c7711
+Car price: 34000 USD
+Car top speed: 216 km/hour
+Car curb weight: 1390 kg.
+Car consumption: 3.5 l/100km
+Car bodystyle: HATCHBACK
+Car drive: FWD
+Car gearbox: AUTOMATIC
+
