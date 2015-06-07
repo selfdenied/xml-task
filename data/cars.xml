@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars xmlns="http://www.example.org/cars" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/cars cars.xsd ">
+
+	<combustion-car id="c1110">
+		<price>10000</price>
+		<speed>210</speed>
+		<weight>1560</weight>
+		<consumption>7.1</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Manual</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>4</cylinders>
+			<displacement>1781</displacement>
+			<power>150</power>
+			<torque>200</torque>
+			<turbo>true</turbo>
+		</engine>
+	</combustion-car>
+
+	<combustion-car id="c1700">
+		<price>15000</price>
+		<speed>250</speed>
+		<weight>1870</weight>
+		<consumption>13.7</consumption>
+		<bodystyle>Estate</bodystyle>
+		<drive>RWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>6</cylinders>
+			<displacement>3278</displacement>
+			<power>250</power>
+			<torque>340</torque>
+			<turbo>false</turbo>
+		</engine>
+	</combustion-car>
+
+	<combustion-car id="c2329">
+		<price>25000</price>
+		<speed>250</speed>
+		<weight>1700</weight>
+		<consumption>9.5</consumption>
+		<bodystyle>Coupe</bodystyle>
+		<drive>AWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>4</cylinders>
+			<displacement>1981</displacement>
+			<power>211</power>
+			<torque>350</torque>
+			<turbo>true</turbo>
+		</engine>
+	</combustion-car>
+
+	<combustion-car id="c2490">
+		<price>9000</price>
+		<speed>190</speed>
+		<weight>1200</weight>
+		<consumption>4.5</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Manual</gearbox>
+		<engine fuel="Diesel">
+			<cylinders>4</cylinders>
+			<displacement>1590</displacement>
+			<power>120</power>
+			<torque>250</torque>
+			<turbo>true</turbo>
+		</engine>
+	</combustion-car>
+
+	<electric-car id="c3332">
+		<price>70000</price>
+		<speed>200</speed>
+		<weight>2200</weight>
+		<consumption>1.5</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>AWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Electricity">
+			<epower>420</epower>
+			<etorque>750</etorque>
+		</engine>
+	</electric-car>
+
+	<hybrid-car id="c7711">
+		<price>34000</price>
+		<speed>216</speed>
+		<weight>1390</weight>
+		<consumption>3.5</consumption>
+		<bodystyle>Hatchback</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>4</cylinders>
+			<displacement>1466</displacement>
+			<power>105</power>
+			<torque>170</torque>
+			<turbo>false</turbo>
+		</engine>
+		<engine fuel="Electricity">
+			<epower>70</epower>
+			<etorque>150</etorque>
+		</engine>
+	</hybrid-car>
+
+</cars>

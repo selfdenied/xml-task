@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/cars"
+	xmlns:tns="http://www.example.org/cars" elementFormDefault="qualified">
+
+	<element name="cars">
+		<complexType>
+			<sequence>
+				<element ref="tns:abstract-car" minOccurs="1" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="abstract-vehicle">
+		<sequence>
+			<element name="price" type="positiveInteger" />
+			<element name="speed" type="tns:top-speed" />
+			<element name="weight" type="positiveInteger" />
+			<element name="consumption" type="tns:fuel-consumption" />
+			<element name="bodystyle" type="tns:body-style" />
+			<element name="drive" type="tns:drive-arrangement" />
+			<element name="gearbox" type="tns:gear-box" />
+		</sequence>
+		<attribute name="id" use="required">
+			<simpleType>
+				<restriction base="ID">
+					<pattern value="[a-zA-Z]{1}[0-9]{4}" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+	<simpleType name="top-speed">
+		<restriction base="positiveInteger">
+			<minInclusive value="50" />
+			<maxInclusive value="450" />
+		</restriction>
+	</simpleType>
+	<simpleType name="fuel-consumption">
+		<restriction base="decimal">
+			<minExclusive value="0" />
+		</restriction>
+	</simpleType>
+	<simpleType name="body-style">
+		<restriction base="string">
+			<enumeration value="Saloon" />
+			<enumeration value="Estate" />
+			<enumeration value="Hatchback" />
+			<enumeration value="Coupe" />
+			<enumeration value="Cabriolet" />
+			<enumeration value="Offroad" />
+		</restriction>
+	</simpleType>
+	<simpleType name="drive-arrangement">
+		<restriction base="string">
+			<enumeration value="FWD" />
+			<enumeration value="RWD" />
+			<enumeration value="AWD" />
+		</restriction>
+	</simpleType>
+	<simpleType name="gear-box">
+		<restriction base="string">
+			<enumeration value="Manual" />
+			<enumeration value="Automatic" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="combustion-vehicle">
+		<complexContent>
+			<extension base="tns:abstract-vehicle">
+				<sequence>
+					<element name="engine" type="tns:combustion-motor" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="electric-vehicle">
+		<complexContent>
+			<extension base="tns:abstract-vehicle">
+				<sequence>
+					<element name="engine" type="tns:electric-motor" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="hybrid-vehicle">
+		<complexContent>
+			<extension base="tns:abstract-vehicle">
+				<sequence>
+					<element name="engine" type="tns:combustion-motor" />
+					<element name="engine" type="tns:electric-motor" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="combustion-motor">
+		<sequence>
+			<element name="cylinders" type="tns:cylinders-number" />
+			<element name="displacement" type="positiveInteger" />
+			<element name="power" type="positiveInteger" />
+			<element name="torque" type="positiveInteger" />
+			<element name="turbo" type="boolean" />
+		</sequence>
+		<attribute name="fuel" use="required">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="Petrol" />
+					<enumeration value="Diesel" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+	<simpleType name="cylinders-number">
+		<restriction base="positiveInteger">
+			<minInclusive value="2" />
+			<maxInclusive value="16" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="electric-motor">
+		<sequence>
+			<element name="epower" type="positiveInteger" />
+			<element name="etorque" type="positiveInteger" />
+		</sequence>
+		<attribute name="fuel" use="required">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="Electricity" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+
+	<element name="abstract-car" type="tns:abstract-vehicle" abstract="true" />
+	<element name="combustion-car" type="tns:combustion-vehicle" substitutionGroup="tns:abstract-car" />
+	<element name="electric-car" type="tns:electric-vehicle" substitutionGroup="tns:abstract-car" />
+	<element name="hybrid-car" type="tns:hybrid-vehicle" substitutionGroup="tns:abstract-car" />
+
+</schema>
