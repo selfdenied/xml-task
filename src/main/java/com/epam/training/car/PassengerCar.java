@@ -4,7 +4,6 @@ import com.epam.training.car.engine.ElectricEngine;
 import com.epam.training.car.engine.InternalCombustionEngine;
 import com.epam.training.car.feature.*;
 import com.epam.training.constant.Constants;
-import com.epam.training.exception.IllegalSetValueException;
 
 /* the class of some abstract passenger car */
 public abstract class PassengerCar {
@@ -21,111 +20,70 @@ public abstract class PassengerCar {
 		super(); // superclass constructor (Object)
 	}
 
-	/* getters and setters with validation */
+	/* getters and setters */
+	/* no need in validation cause we take data from XML/XSD */
 	public int getCarID() {
 		return carID;
 	}
 
-	public void setCarID(int carID) throws IllegalSetValueException {
-		if (carID > 0) {
-			this.carID = carID;
-		} else {
-			throw new IllegalSetValueException("Car ID should be positive");
-		}
+	public void setCarID(int carID) {
+		this.carID = carID;
 	}
 
 	public int getCarPrice() {
 		return carPrice;
 	}
 
-	public void setCarPrice(int carPrice) throws IllegalSetValueException {
-		if (carPrice > 0) {
-			this.carPrice = carPrice;
-		} else {
-			throw new IllegalSetValueException("Car price should be positive");
-		}
+	public void setCarPrice(int carPrice) {
+		this.carPrice = carPrice;
 	}
 
 	public int getTopSpeed() {
 		return topSpeed;
 	}
 
-	public void setTopSpeed(int topSpeed) throws IllegalSetValueException {
-		if (topSpeed >= Constants.MIN_TOP_SPEED
-				&& topSpeed <= Constants.MAX_TOP_SPEED) {
-			this.topSpeed = topSpeed;
-		} else {
-			throw new IllegalSetValueException(
-					"Car's top speed should be between 50 and 450 km/hour");
-		}
+	public void setTopSpeed(int topSpeed) {
+		this.topSpeed = topSpeed;
 	}
 
 	public int getCurbWeight() {
 		return curbWeight;
 	}
 
-	public void setCurbWeight(int curbWeight) throws IllegalSetValueException {
-		if (curbWeight > 0) {
-			this.curbWeight = curbWeight;
-		} else {
-			throw new IllegalSetValueException(
-					"Car's curb weight should be positive");
-		}
+	public void setCurbWeight(int curbWeight) {
+		this.curbWeight = curbWeight;
 	}
 
 	public double getConsumption() {
 		return consumption;
 	}
 
-	public void setConsumption(double consumption)
-			throws IllegalSetValueException {
-		if (consumption > 0) {
-			this.consumption = consumption;
-		} else {
-			throw new IllegalSetValueException(
-					"Car's consumption should be positive");
-		}
+	public void setConsumption(double consumption) {
+		this.consumption = consumption;
 	}
 
 	public BodyStyle getBodyStyle() {
 		return bodyStyle;
 	}
 
-	public void setBodyStyle(BodyStyle bodyStyle)
-			throws IllegalSetValueException {
-		if (bodyStyle != null) {
-			this.bodyStyle = bodyStyle;
-		} else {
-			throw new IllegalSetValueException(
-					"Cannot accept a 'null' value. Enter a proper body style value");
-		}
+	public void setBodyStyle(BodyStyle bodyStyle) {
+		this.bodyStyle = bodyStyle;
 	}
 
 	public DriveArrangement getDriveArrangement() {
 		return driveArrangement;
 	}
 
-	public void setDriveArrangement(DriveArrangement driveArrangement)
-			throws IllegalSetValueException {
-		if (driveArrangement != null) {
-			this.driveArrangement = driveArrangement;
-		} else {
-			throw new IllegalSetValueException(
-					"Cannot accept a 'null' value. Enter a proper drive arrangement");
-		}
+	public void setDriveArrangement(DriveArrangement driveArrangement) {
+		this.driveArrangement = driveArrangement;
 	}
 
 	public Gearbox getGearbox() {
 		return gearbox;
 	}
 
-	public void setGearbox(Gearbox gearbox) throws IllegalSetValueException {
-		if (gearbox != null) {
-			this.gearbox = gearbox;
-		} else {
-			throw new IllegalSetValueException(
-					"Cannot accept a 'null' value. Enter a proper gearbox object");
-		}
+	public void setGearbox(Gearbox gearbox) {
+		this.gearbox = gearbox;
 	}
 
 	@Override
@@ -147,9 +105,8 @@ public abstract class PassengerCar {
 		return builder.toString();
 	}
 
-	public abstract void setCombustionEngine(InternalCombustionEngine engine)
-			throws IllegalSetValueException;
+	/* abstract methods to be implemented in the sub-classes */
+	public abstract void setCombustionEngine(InternalCombustionEngine engine);
 
-	public abstract void setElectricEngine(ElectricEngine engine)
-			throws IllegalSetValueException;
+	public abstract void setElectricEngine(ElectricEngine engine);
 }

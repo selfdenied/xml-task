@@ -8,7 +8,11 @@ import com.epam.training.car.PassengerCar;
 
 /* the container class for a list of taxi */
 public class TaxiFleet {
-	private List<PassengerCar> taxiFleetList = new ArrayList<PassengerCar>();
+	private List<PassengerCar> taxiFleetList;
+	
+	public TaxiFleet() {
+		this.taxiFleetList = new ArrayList<PassengerCar>();
+	}
 
 	/* getter and some delegate methods (to manage list operations) */
 	public List<PassengerCar> getTaxiFleetList() {

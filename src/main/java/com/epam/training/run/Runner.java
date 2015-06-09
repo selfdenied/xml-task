@@ -28,7 +28,7 @@ public class Runner {
 		PrintReportManager printReportManager = new PrintReportManager();
 		/* initializing a building parser */
 		// use DOM, SAX or STAX values
-		AbstractCarBuilder builder = CarBuilderFactory.createCarBuilder("DOM");
+		AbstractCarBuilder builder = CarBuilderFactory.createCarBuilder("STAX");
 		/* generates a taxi fleet */
 		TaxiFleet taxiFleet = TaxiFleetCreator.constructTaxiFleet(
 				builder, Constants.INPUT_FILE_PATH);

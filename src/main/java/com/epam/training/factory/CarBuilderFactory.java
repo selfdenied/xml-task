@@ -4,14 +4,17 @@ import org.apache.log4j.Logger;
 
 import com.epam.training.parser.*;
 
+/* the factory class that creates different car builders */
 public class CarBuilderFactory {
 	/* getting the logger reference */
 	private static final Logger LOG = Logger.getLogger(CarBuilderFactory.class);
 
+	/* the list of parsers available */
 	private enum ParserType {
 		SAX, DOM, STAX;
 	}
 
+	/* method returns the instance of AbstractCarBuilder sub-class */
 	public static AbstractCarBuilder createCarBuilder(String parserType) {
 		AbstractCarBuilder builder = new SAXCarBuilder();
 
@@ -37,6 +40,7 @@ public class CarBuilderFactory {
 		return builder;
 	}
 
+	/* supplementary method that checks the validity of parser name */
 	private static boolean checkParserTypeName(String parserType) {
 		boolean parserNameOk = false;
 		String type = parserType.toUpperCase();

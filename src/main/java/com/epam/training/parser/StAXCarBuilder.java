@@ -16,7 +16,6 @@ import com.epam.training.car.*;
 import com.epam.training.car.engine.*;
 import com.epam.training.car.feature.*;
 import com.epam.training.constant.Constants;
-import com.epam.training.exception.IllegalSetValueException;
 import com.epam.training.parser.enumeration.CarEnum;
 
 public class StAXCarBuilder extends AbstractCarBuilder {
@@ -25,6 +24,7 @@ public class StAXCarBuilder extends AbstractCarBuilder {
 	private XMLInputFactory inputFactory;
 	private PassengerCar car;
 
+	/* initializing XMLInputFactory */
 	public StAXCarBuilder() {
 		super();
 		this.inputFactory = XMLInputFactory.newInstance();
@@ -32,18 +32,18 @@ public class StAXCarBuilder extends AbstractCarBuilder {
 
 	@Override
 	public void buildTaxiFleet(String filePath) {
-		FileInputStream inputStream = null;
 		XMLStreamReader reader = null;
 		String elementName;
 
-		try {
-			inputStream = new FileInputStream(new File(filePath));
+		try (FileInputStream inputStream = new FileInputStream(new File(filePath))) {
+			/* creating the XMLStreamReader */
 			reader = inputFactory.createXMLStreamReader(inputStream);
-			// parsing the XML
+			// parsing the XML file
 			while (reader.hasNext()) {
 				int type = reader.next();
 				if (type == XMLStreamConstants.START_ELEMENT) {
 					elementName = reader.getLocalName();
+					/* building a proper PassengerCar object */
 					switch (elementName) {
 					case Constants.COMBUSTION_CAR:
 						car = buildCombustionCar(reader);
@@ -66,48 +66,47 @@ public class StAXCarBuilder extends AbstractCarBuilder {
 			LOG.error("StAX parser error!", exception);
 		} catch (FileNotFoundException exception) {
 			LOG.error("File '" + filePath + "' not found!", exception);
-		} catch (IllegalSetValueException exception) {
-			LOG.error(exception.getMessage(), exception);
-		} finally {
-			try {
-				if (inputStream != null) {
-					inputStream.close();
-				}
-			} catch (IOException exception) {
-				LOG.error("Unable to close file!", exception);
-			}
+		} catch (IOException exception) {
+			LOG.error("Unable to close the file!", exception);
 		}
 	}
 
+	/* method build a combustion car object and initializes its fields */
 	private PassengerCar buildCombustionCar(XMLStreamReader reader)
-			throws IllegalSetValueException, XMLStreamException {
+			throws XMLStreamException {
 		PassengerCar combustionCar = new CombustionEnginePassengerCar();
+
 		combustionCar.setCarID(Integer.parseInt(reader.getAttributeValue(0)
 				.substring(1)));
 		initializeCar(combustionCar, reader);
 		return combustionCar;
 	}
 
+	/* method build an electric car object and initializes its fields */
 	private PassengerCar buildElectricCar(XMLStreamReader reader)
-			throws IllegalSetValueException, XMLStreamException {
+			throws XMLStreamException {
 		PassengerCar electricCar = new ElectricPassengerCar();
+
 		electricCar.setCarID(Integer.parseInt(reader.getAttributeValue(0)
 				.substring(1)));
 		initializeCar(electricCar, reader);
 		return electricCar;
 	}
 
+	/* method build a hybrid car object and initializes its fields */
 	private PassengerCar buildHybridCar(XMLStreamReader reader)
-			throws IllegalSetValueException, XMLStreamException {
+			throws XMLStreamException {
 		PassengerCar hybridCar = new HybridPassengerCar();
+
 		hybridCar.setCarID(Integer.parseInt(reader.getAttributeValue(0)
 				.substring(1)));
 		initializeCar(hybridCar, reader);
 		return hybridCar;
 	}
 
+	/* method initialized car's fields (including engine) */
 	private void initializeCar(PassengerCar car, XMLStreamReader reader)
-			throws IllegalSetValueException, XMLStreamException {
+			throws XMLStreamException {
 		String elementName;
 		while (reader.hasNext()) {
 			int type = reader.next();
@@ -163,9 +162,10 @@ public class StAXCarBuilder extends AbstractCarBuilder {
 		throw new XMLStreamException("Unknown element in a 'car' tag!");
 	}
 
-	private InternalCombustionEngine initializeCombustionEngine(XMLStreamReader reader)
-			throws IllegalSetValueException, XMLStreamException {
-		InternalCombustionEngine engine; 
+	/* supplementary method that initializes a Petrol or Diesel engine object */
+	private InternalCombustionEngine initializeCombustionEngine(
+			XMLStreamReader reader) throws XMLStreamException {
+		InternalCombustionEngine engine;
 		String elementName;
 		if (reader.getAttributeValue(0).equals(Constants.PETROL)) {
 			engine = new PetrolEngine();
@@ -207,10 +207,11 @@ public class StAXCarBuilder extends AbstractCarBuilder {
 		}
 		throw new XMLStreamException("Unknown element in an 'engine' tag!");
 	}
-	
+
+	/* supplementary method that initializes an Electric engine object */
 	private ElectricEngine initializeElectricEngine(XMLStreamReader reader)
-			throws IllegalSetValueException, XMLStreamException {
-		ElectricEngine engine = new ElectricEngine(); 
+			throws XMLStreamException {
+		ElectricEngine engine = new ElectricEngine();
 		String elementName;
 
 		while (reader.hasNext()) {
@@ -240,6 +241,7 @@ public class StAXCarBuilder extends AbstractCarBuilder {
 		throw new XMLStreamException("Unknown element in an 'engine' tag!");
 	}
 
+	/* method retrieves text content from an element */
 	private String getXMLText(XMLStreamReader reader) throws XMLStreamException {
 		String text = null;
 		if (reader.hasNext()) {

@@ -1,6 +1,24 @@
-The total price of the taxi fleet: 163000 USD
+The total price of the taxi fleet: 491300 USD
 
 The list of taxi sorted according to fuel consumption:
+
+Car ID: c1111
+Car price: 30000 USD
+Car top speed: 170 km/hour
+Car curb weight: 1630 kg.
+Car consumption: 0.9 l/100km
+Car bodystyle: HATCHBACK
+Car drive: FWD
+Car gearbox: AUTOMATIC
+
+Car ID: c2690
+Car price: 37000 USD
+Car top speed: 200 km/hour
+Car curb weight: 1570 kg.
+Car consumption: 1.3 l/100km
+Car bodystyle: COUPE
+Car drive: RWD
+Car gearbox: AUTOMATIC
 
 Car ID: c3332
 Car price: 70000 USD
@@ -11,12 +29,30 @@ Car bodystyle: SALOON
 Car drive: AWD
 Car gearbox: AUTOMATIC
 
+Car ID: c7676
+Car price: 90000 USD
+Car top speed: 210 km/hour
+Car curb weight: 1970 kg.
+Car consumption: 1.7 l/100km
+Car bodystyle: SALOON
+Car drive: RWD
+Car gearbox: AUTOMATIC
+
 Car ID: c7711
 Car price: 34000 USD
 Car top speed: 216 km/hour
 Car curb weight: 1390 kg.
 Car consumption: 3.5 l/100km
 Car bodystyle: HATCHBACK
+Car drive: FWD
+Car gearbox: AUTOMATIC
+
+Car ID: c4499
+Car price: 38000 USD
+Car top speed: 190 km/hour
+Car curb weight: 1475 kg.
+Car consumption: 3.9 l/100km
+Car bodystyle: SALOON
 Car drive: FWD
 Car gearbox: AUTOMATIC
 
@@ -29,6 +65,24 @@ Car bodystyle: SALOON
 Car drive: FWD
 Car gearbox: MANUAL
 
+Car ID: c8823
+Car price: 4000 USD
+Car top speed: 164 km/hour
+Car curb weight: 1180 kg.
+Car consumption: 5.5 l/100km
+Car bodystyle: CABRIOLET
+Car drive: RWD
+Car gearbox: MANUAL
+
+Car ID: c77
+Car price: 5000 USD
+Car top speed: 167 km/hour
+Car curb weight: 1200 kg.
+Car consumption: 5.9 l/100km
+Car bodystyle: ESTATE
+Car drive: FWD
+Car gearbox: MANUAL
+
 Car ID: c1110
 Car price: 10000 USD
 Car top speed: 210 km/hour
@@ -37,6 +91,15 @@ Car consumption: 7.1 l/100km
 Car bodystyle: SALOON
 Car drive: FWD
 Car gearbox: MANUAL
+
+Car ID: c4545
+Car price: 7000 USD
+Car top speed: 175 km/hour
+Car curb weight: 1400 kg.
+Car consumption: 9.1 l/100km
+Car bodystyle: OFFROAD
+Car drive: AWD
+Car gearbox: AUTOMATIC
 
 Car ID: c2329
 Car price: 25000 USD
@@ -47,6 +110,15 @@ Car bodystyle: COUPE
 Car drive: AWD
 Car gearbox: AUTOMATIC
 
+Car ID: c8800
+Car price: 42300 USD
+Car top speed: 241 km/hour
+Car curb weight: 2890 kg.
+Car consumption: 11.5 l/100km
+Car bodystyle: CABRIOLET
+Car drive: RWD
+Car gearbox: MANUAL
+
 Car ID: c1700
 Car price: 15000 USD
 Car top speed: 250 km/hour
@@ -54,6 +126,15 @@ Car curb weight: 1870 kg.
 Car consumption: 13.7 l/100km
 Car bodystyle: ESTATE
 Car drive: RWD
+Car gearbox: AUTOMATIC
+
+Car ID: c9943
+Car price: 75000 USD
+Car top speed: 250 km/hour
+Car curb weight: 2400 kg.
+Car consumption: 19.1 l/100km
+Car bodystyle: SALOON
+Car drive: AWD
 Car gearbox: AUTOMATIC
 
 The list of taxi with the given top speed range (180 - 220 km/hour):
@@ -92,5 +173,32 @@ Car curb weight: 1390 kg.
 Car consumption: 3.5 l/100km
 Car bodystyle: HATCHBACK
 Car drive: FWD
+Car gearbox: AUTOMATIC
+
+Car ID: c4499
+Car price: 38000 USD
+Car top speed: 190 km/hour
+Car curb weight: 1475 kg.
+Car consumption: 3.9 l/100km
+Car bodystyle: SALOON
+Car drive: FWD
+Car gearbox: AUTOMATIC
+
+Car ID: c2690
+Car price: 37000 USD
+Car top speed: 200 km/hour
+Car curb weight: 1570 kg.
+Car consumption: 1.3 l/100km
+Car bodystyle: COUPE
+Car drive: RWD
+Car gearbox: AUTOMATIC
+
+Car ID: c7676
+Car price: 90000 USD
+Car top speed: 210 km/hour
+Car curb weight: 1970 kg.
+Car consumption: 1.7 l/100km
+Car bodystyle: SALOON
+Car drive: RWD
 Car gearbox: AUTOMATIC
 

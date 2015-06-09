@@ -1,5 +1,6 @@
 package com.epam.training.parser.enumeration;
 
+/* the list of all fields in the 'PassengerCar' object */
 public enum CarEnum {
 	PRICE("price"), 
 	SPEED("speed"), 

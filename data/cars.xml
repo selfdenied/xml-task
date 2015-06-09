@@ -105,4 +105,152 @@
 		</engine>
 	</hybrid-car>
 
+	<combustion-car id="c0077">
+		<price>5000</price>
+		<speed>167</speed>
+		<weight>1200</weight>
+		<consumption>5.9</consumption>
+		<bodystyle>Estate</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Manual</gearbox>
+		<engine fuel="Diesel">
+			<cylinders>4</cylinders>
+			<displacement>1598</displacement>
+			<power>110</power>
+			<torque>205</torque>
+			<turbo>true</turbo>
+		</engine>
+	</combustion-car>
+
+	<combustion-car id="c4545">
+		<price>7000</price>
+		<speed>175</speed>
+		<weight>1400</weight>
+		<consumption>9.1</consumption>
+		<bodystyle>Offroad</bodystyle>
+		<drive>AWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Diesel">
+			<cylinders>6</cylinders>
+			<displacement>3784</displacement>
+			<power>220</power>
+			<torque>295</torque>
+			<turbo>false</turbo>
+		</engine>
+	</combustion-car>
+
+	<combustion-car id="c9943">
+		<price>75000</price>
+		<speed>250</speed>
+		<weight>2400</weight>
+		<consumption>19.1</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>AWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>12</cylinders>
+			<displacement>6231</displacement>
+			<power>550</power>
+			<torque>900</torque>
+			<turbo>true</turbo>
+		</engine>
+	</combustion-car>
+
+	<combustion-car id="c8800">
+		<price>42300</price>
+		<speed>241</speed>
+		<weight>2890</weight>
+		<consumption>11.5</consumption>
+		<bodystyle>Cabriolet</bodystyle>
+		<drive>RWD</drive>
+		<gearbox>Manual</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>8</cylinders>
+			<displacement>4253</displacement>
+			<power>354</power>
+			<torque>430</torque>
+			<turbo>false</turbo>
+		</engine>
+	</combustion-car>
+
+	<electric-car id="c1111">
+		<price>30000</price>
+		<speed>170</speed>
+		<weight>1630</weight>
+		<consumption>0.9</consumption>
+		<bodystyle>Hatchback</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Electricity">
+			<epower>130</epower>
+			<etorque>300</etorque>
+		</engine>
+	</electric-car>
+
+	<hybrid-car id="c4499">
+		<price>38000</price>
+		<speed>190</speed>
+		<weight>1475</weight>
+		<consumption>3.9</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>FWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Diesel">
+			<cylinders>4</cylinders>
+			<displacement>1399</displacement>
+			<power>122</power>
+			<torque>225</torque>
+			<turbo>true</turbo>
+		</engine>
+		<engine fuel="Electricity">
+			<epower>40</epower>
+			<etorque>130</etorque>
+		</engine>
+	</hybrid-car>
+
+	<combustion-car id="c8823">
+		<price>4000</price>
+		<speed>164</speed>
+		<weight>1180</weight>
+		<consumption>5.5</consumption>
+		<bodystyle>Cabriolet</bodystyle>
+		<drive>RWD</drive>
+		<gearbox>Manual</gearbox>
+		<engine fuel="Petrol">
+			<cylinders>4</cylinders>
+			<displacement>1991</displacement>
+			<power>140</power>
+			<torque>206</torque>
+			<turbo>false</turbo>
+		</engine>
+	</combustion-car>
+
+	<electric-car id="c2690">
+		<price>37000</price>
+		<speed>200</speed>
+		<weight>1570</weight>
+		<consumption>1.3</consumption>
+		<bodystyle>Coupe</bodystyle>
+		<drive>RWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Electricity">
+			<epower>260</epower>
+			<etorque>500</etorque>
+		</engine>
+	</electric-car>
+
+	<electric-car id="c7676">
+		<price>90000</price>
+		<speed>210</speed>
+		<weight>1970</weight>
+		<consumption>1.7</consumption>
+		<bodystyle>Saloon</bodystyle>
+		<drive>RWD</drive>
+		<gearbox>Automatic</gearbox>
+		<engine fuel="Electricity">
+			<epower>390</epower>
+			<etorque>735</etorque>
+		</engine>
+	</electric-car>
+
 </cars>
